@@ -123,3 +123,6 @@ augroup END
 
 " Powerline
 python from powerline.bindings.vim import source_plugin; source_plugin()
+
+" Gundo
+nnoremap <leader>u :GundoToggle<cr>
