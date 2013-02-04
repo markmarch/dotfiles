@@ -2,6 +2,13 @@
 function efish; vim ~/.config/fish/config.fish; end
 function evim;  vim ~/.vimrc; end
 
+# Brazil build functions
+function bbc; brazil-build clean; end
+function bb -d "Brazil build"
+    brazil-build $argv[1]
+end
+function bba; brazil-build apollo-pkg; end
+
 function fish_prompt
   set_color $fish_color_cwd
   echo -n (basename $PWD)
@@ -32,3 +39,6 @@ set -g -x fish_greeting ''
 set -g -x EDITOR vim
 
 set -gx LANG "en_US.utf-8"
+
+# Set LD_LIBRARY_PATH
+set -gx LD_LIBRARY_PATH '/usr/local/lib'
