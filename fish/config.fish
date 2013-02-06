@@ -32,6 +32,7 @@ prepend_to_path "/usr/bin"
 prepend_to_path "/usr/local/bin"
 prepend_to_path "/usr/local/sbin"
 prepend_to_path "$HOME/bin"
+prepend_to_path "$HOME/Developer/bin"
 prepend_to_path "/usr/local/Cellar/macvim/7.3-66/bin"
 prepend_to_path "/usr/local/share/python"
 
