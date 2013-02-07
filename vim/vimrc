@@ -103,7 +103,8 @@ nnoremap <leader>np :set nopaste<cr>
 " NERDTree
 " automatcially open a NERDTree when vim opens
 autocmd vimenter * if !argc() | NERDTree | endif
-map <C-n> :NERDTreeToggle<cr>
+nnoremap <C-n> :NERDTreeToggle<cr>
+inoremap <C-n> :NERDTreeToggle<cr>
 
 " Ack
 nnoremap <leader>a :Ack
