@@ -1,19 +1,36 @@
 # Little functions
-function efish; vim ~/.config/fish/config.fish; end
-function evim;  vim ~/.vimrc; end
+function efish       ; vim ~/.config/fish/config.fish ; end
+function evim        ; vim ~/.vimrc                   ; end
+function server_this ; python -m SimpleHttpServer     ; end
+function ..          ; cd ..                          ; end
+function ...         ; cd ../..                       ; end
+
+# Short cut to set color
+set normal               ( set_color normal)
+set yellow               ( set_color yellow)
+set red                  ( set_color red)
+set blue                 ( set_color blue)
+set magenta              ( set_color magenta)
+set green                ( set_color green)
+
 
 # Brazil build functions
 function bbc; brazil-build clean; end
 function bb -d "Brazil build"
-    brazil-build $argv[1]
+    brazil-build $argv
 end
 function bba; brazil-build apollo-pkg; end
 
-function fish_prompt
+function simple_fish_prompt
   set_color $fish_color_cwd
   echo -n (basename $PWD)
   set_color normal
   echo -n ' > '
+end
+
+# envImprovement
+function ei -d "Use command in /apollo/env/envImprovement"
+    eval /apollo/env/envImprovement/bin/$argv
 end
 
 function prepend_to_path -d "Prepend the given dir to PATH"
@@ -33,13 +50,15 @@ prepend_to_path "/usr/local/bin"
 prepend_to_path "/usr/local/sbin"
 prepend_to_path "$HOME/bin"
 prepend_to_path "$HOME/Developer/bin"
+prepend_to_path "/apollo/env/SDETools/bin"
 prepend_to_path "/usr/local/Cellar/macvim/7.3-66/bin"
 prepend_to_path "/usr/local/share/python"
 
 set -g -x fish_greeting ''
-set -g -x EDITOR vim
 
 set -gx LANG "en_US.utf-8"
 
 # Set LD_LIBRARY_PATH
-set -gx LD_LIBRARY_PATH '/usr/local/lib'
+# set -gx LD_LIBRARY_PATH '/usr/local/lib'
+
+function fish_prompt; simple_fish_prompt; end
