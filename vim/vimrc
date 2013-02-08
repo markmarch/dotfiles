@@ -6,7 +6,7 @@ set nocompatible
 syntax on
 set modelines=0
 
-colorscheme darkburn
+colorscheme mustang
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ for\ Powerline:h14
@@ -65,7 +65,7 @@ nmap <D-6> g^
 nmap <D-0> g^
 
 set list
-set listchars=tab:▸\ ,eol:.
+set listchars=tab:▸\ ,eol:¬
 nnoremap <leader>l :set list!<cr>
 
 nnoremap <up> <nop>
@@ -103,8 +103,7 @@ nnoremap <leader>np :set nopaste<cr>
 " NERDTree
 " automatcially open a NERDTree when vim opens
 autocmd vimenter * if !argc() | NERDTree | endif
-nnoremap <C-n> :NERDTreeToggle<cr>
-inoremap <C-n> :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
 
 " Ack
 nnoremap <leader>a :Ack
