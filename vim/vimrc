@@ -95,9 +95,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Quick enter to paste mode
-nnoremap <leader>sp :set paste<cr>
-nnoremap <leader>np :set nopaste<cr>
+" Little function
+" Uppercase current word in insert mode
+inoremap <C-u> <esc>mzgUiw`za
+
 
 " Plugins
 " NERDTree
