@@ -6,7 +6,7 @@ set nocompatible
 syntax on
 set modelines=0
 
-colorscheme mustang
+colorscheme desertEx
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ for\ Powerline:h14
@@ -52,6 +52,28 @@ set wrap
 set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
+
+set wildignore+=.git
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
+set wildignore+=*.sw?
+set wildignore+=*.DS_Store
+set wildignore+=*.class
+set wildignore+=*.pyc
+
+" Folding
+set foldlevelstart=0
+set foldnestmax=10
+set foldmethod=indent
+set nofoldenable
+
+" Space to toggle folding
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Make zO recursively open top level fold we are in
+" no matter where the current line is
+nnoremap zO zCzO
+nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
 
 vmap <D-j> gj
 vmap <D-k> gk
