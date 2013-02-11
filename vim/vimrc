@@ -6,7 +6,7 @@ set nocompatible
 syntax on
 set modelines=0
 
-colorscheme desertEx
+colorscheme mustang
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ for\ Powerline:h14
@@ -170,3 +170,10 @@ nnoremap <leader>u :GundoToggle<cr>
 nnoremap <leader>fb :FufBuffer<cr>
 nnoremap <leader>ff :FufFile<cr>
 
+" Scala quickfix
+set errorformat=%E\ %#[error]\ %#%f:%l:\ %m,%-Z\ %#[error]\ %p^,%-C\ %#[error]\ %m
+set errorformat+=,%W\ %#[warn]\ %#%f:%l:\ %m,%-Z\ %#[warn]\ %p^,%-C\ %#[warn]\ %m
+set errorformat+=,%-G%.%#
+
+noremap <silent> <Leader>gf :cf target/quickfix/sbt.quickfix<CR>
+noremap <silent> <Leader>gn :cn<CR>
