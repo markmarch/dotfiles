@@ -13,6 +13,8 @@ set blue                 ( set_color blue)
 set magenta              ( set_color magenta)
 set green                ( set_color green)
 
+# Set jrebel path variable
+set -gx JREBEL_PATH "$HOME/.jrebel/jrebel/jrebel.jar"
 
 # Brazil build functions
 function bbc; brazil-build clean; end
