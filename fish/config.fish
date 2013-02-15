@@ -43,6 +43,7 @@ function prepend_to_path -d "Prepend the given dir to PATH"
     end
 end
 set -gx PATH "/usr/X11R6/bin"
+prepend_to_path "/apollo/env/envImprovement/bin"
 prepend_to_path "/usr/texbin"
 prepend_to_path "/sbin"
 prepend_to_path "/usr/sbin"
@@ -52,9 +53,12 @@ prepend_to_path "/usr/local/bin"
 prepend_to_path "/usr/local/sbin"
 prepend_to_path "$HOME/bin"
 prepend_to_path "$HOME/Developer/bin"
+prepend_to_path "/apollo/bin"
 prepend_to_path "/apollo/env/SDETools/bin"
+prepend_to_path "/apollo/env/Git/bin"
 prepend_to_path "/usr/local/Cellar/macvim/7.3-66/bin"
 prepend_to_path "/usr/local/share/python"
+prepend_to_path "/apollo/env/RestClientUtils/bin"
 
 set -g -x fish_greeting ''
 
