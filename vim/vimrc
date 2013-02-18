@@ -9,7 +9,7 @@ set modelines=0
 colorscheme mustang
 
 if has('gui_running')
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h15
 end
 
 set tabstop=4
@@ -44,7 +44,9 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader><space> :noh<cr>
+set nocursorline
+set nocursorcolumn
+nnoremap <leader><space> :noh<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 
@@ -56,9 +58,39 @@ set colorcolumn=85
 set wildignore+=.git
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
 set wildignore+=*.sw?
-set wildignore+=*.DS_Store
+set wildignore+=*.ds_store
 set wildignore+=*.class
 set wildignore+=*.pyc
+
+" resize split when window resizes
+au VimResized :wincmd =
+
+" Backup
+set backup
+set noswapfile
+
+set undodir=~/.vim_tmp/undo//
+set backupdir=~/.vim_tmp/backup//
+set directory=~/.vim_tmp/swap//
+
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
+" Highlight merge conflict
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Sort lines
+nnoremap <leader>s vip:!sort<cr>
+vnoremap <leader>s :!sort<cr>
+
+nnoremap D d$
 
 " Folding
 set foldlevelstart=0
@@ -73,7 +105,7 @@ vnoremap <Space> za
 " Make zO recursively open top level fold we are in
 " no matter where the current line is
 nnoremap zO zCzO
-nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<cr>
+nnoremap <c-z> mzzMzvzz15<c-e>`z:Pulse<CR>
 
 vmap <D-j> gj
 vmap <D-k> gk
@@ -88,7 +120,7 @@ nmap <D-0> g^
 
 set list
 set listchars=tab:▸\ ,eol:¬
-nnoremap <leader>l :set list!<cr>
+nnoremap <leader>l :set list!<CR>
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -126,7 +158,7 @@ inoremap <C-u> <esc>mzgUiw`za
 " NERDTree
 " automatcially open a NERDTree when vim opens
 autocmd vimenter * if !argc() | NERDTree | endif
-nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " Ack
 nnoremap <leader>a :Ack
@@ -164,11 +196,16 @@ au Syntax * RainbowParenthesesLoadChevrons
 python from powerline.bindings.vim import source_plugin; source_plugin()
 
 " Gundo
-nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>u :GundoToggle<CR>
 
-" FuzzyFinder
-nnoremap <leader>fb :FufBuffer<cr>
-nnoremap <leader>ff :FufFile<cr>
+" CtrlP
+let g:ctrlp_working_path_mode = "ra"
+let g:ctrlp_custom_ignore = '\v[\/]target$'
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
 
 " Scala quickfix
 set errorformat=%E\ %#[error]\ %#%f:%l:\ %m,%-Z\ %#[error]\ %p^,%-C\ %#[error]\ %m
