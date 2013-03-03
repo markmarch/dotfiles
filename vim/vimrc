@@ -1,12 +1,16 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
+" Auto source when write to vimrc file
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 set nocompatible
 syntax on
 set modelines=0
 
-colorscheme mustang
+colorscheme gentooish
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ for\ Powerline:h15
