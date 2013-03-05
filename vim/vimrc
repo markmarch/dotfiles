@@ -1,10 +1,13 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
+
 " Auto source when write to vimrc file
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
 endif
+
+set fileformats=unix
 
 set nocompatible
 syntax on
@@ -210,6 +213,24 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-l> neocomplcache#complete_common_string()
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
+" Omni completion
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Scala quickfix
 set errorformat=%E\ %#[error]\ %#%f:%l:\ %m,%-Z\ %#[error]\ %p^,%-C\ %#[error]\ %m

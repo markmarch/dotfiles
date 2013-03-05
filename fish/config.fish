@@ -59,6 +59,8 @@ prepend_to_path "/apollo/env/Git/bin"
 prepend_to_path "/usr/local/Cellar/macvim/7.3-66/bin"
 prepend_to_path "/usr/local/share/python"
 prepend_to_path "/apollo/env/RestClientUtils/bin"
+prepend_to_path "/apollo/env/ScalaDev/bin"
+prepend_to_path "/apollo/env/eclipse-3.7/bin"
 
 set -g -x fish_greeting ''
 
