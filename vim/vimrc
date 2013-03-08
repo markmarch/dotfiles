@@ -13,7 +13,7 @@ set nocompatible
 syntax on
 set modelines=0
 
-colorscheme mustang
+colorscheme badwolf
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ for\ Powerline:h15
