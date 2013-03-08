@@ -5,6 +5,9 @@ function server_this ; python -m SimpleHttpServer     ; end
 function ..          ; cd ..                          ; end
 function ...         ; cd ../..                       ; end
 
+# open md file with Mou.app
+function mou; open -a Mou.app $argv; end
+
 # Short cut to set color
 set normal               ( set_color normal)
 set yellow               ( set_color yellow)
@@ -42,6 +45,7 @@ function prepend_to_path -d "Prepend the given dir to PATH"
         end
     end
 end
+
 set -gx PATH "/usr/X11R6/bin"
 prepend_to_path "/apollo/env/envImprovement/bin"
 prepend_to_path "/usr/texbin"
