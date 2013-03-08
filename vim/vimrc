@@ -13,7 +13,7 @@ set nocompatible
 syntax on
 set modelines=0
 
-colorscheme gentooish
+colorscheme mustang
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro\ for\ Powerline:h15
@@ -239,3 +239,7 @@ set errorformat+=,%-G%.%#
 
 noremap <silent> <Leader>gf :cf target/quickfix/sbt.quickfix<CR>
 noremap <silent> <Leader>gn :cn<CR>
+
+" Syntastic
+" Ignore html file
+let g:syntastic_disabled_filetypes = ['html']
