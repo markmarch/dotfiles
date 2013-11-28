@@ -1,5 +1,37 @@
+set shell=/bin/bash
+set nocompatible
+
 filetype off
-call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc() 
+
+" Plugins
+Bundle 'gmarik/vundle'
+
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'mileszs/ack.vim.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'derekwyatt/vim-scala.git'
+Bundle 'kien/rainbow_parentheses.vim.git'
+Bundle 'vim-scripts/YankRing.vim.git'
+Bundle 'vim-scripts/FuzzyFinder.git'
+Bundle 'vim-scripts/L9.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'ervandew/supertab.git'
+Bundle 'godlygeek/tabular.git'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'Shougo/neocomplcache.git'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'Lokaltog/vim-easymotion.git'
+Bundle 'mattn/zencoding-vim.git'
+Bundle 'pangloss/vim-javascript.git'
+Bundle 'kana/vim-smartinput.git'
+Bundle 'airblade/vim-gitgutter.git'
+Bundle 'Lokaltog/vim-powerline.git'
+
 filetype plugin indent on
 
 " Auto source when write to vimrc file
@@ -8,12 +40,10 @@ if has("autocmd")
 endif
 
 set fileformats=unix
-set shell=/bin/bash
-set nocompatible
 syntax on
 set modelines=0
 
-colorscheme badwolf
+" colorscheme badwolf
 
 if has('gui_running')
     set guifont=Source\ Code\ Pro:h14
