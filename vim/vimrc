@@ -8,7 +8,7 @@ if has("autocmd")
 endif
 
 set fileformats=unix
-
+set shell=/bin/bash
 set nocompatible
 syntax on
 set modelines=0
@@ -16,8 +16,11 @@ set modelines=0
 colorscheme badwolf
 
 if has('gui_running')
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h15
+    set guifont=Source\ Code\ Pro:h14
 end
+
+" Remove scrollbar in gui
+set guioptions-=R
 
 set tabstop=4
 set shiftwidth=4
@@ -200,7 +203,7 @@ au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
 
 " Powerline
-python from powerline.bindings.vim import source_plugin; source_plugin()
+" python from powerline.bindings.vim import source_plugin; source_plugin()
 
 " Gundo
 nnoremap <leader>u :GundoToggle<CR>
