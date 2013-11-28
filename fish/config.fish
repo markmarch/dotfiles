@@ -39,10 +39,6 @@ function simple_fish_prompt
   echo -n ' % '
 end
 
-# envImprovement
-function ei -d "Use command in /apollo/env/envImprovement"
-    eval /apollo/env/envImprovement/bin/$argv
-end
 
 function prepend_to_path -d "Prepend the given dir to PATH"
     if test -d $argv[1]
@@ -52,15 +48,12 @@ function prepend_to_path -d "Prepend the given dir to PATH"
     end
 end
 
-set -gx PATH "/usr/X11R6/bin"
-
 prepend_to_path "$ANDROID_HOME/platform-tools/"
 prepend_to_path "/Users/xmjia/Library/Haskell/ghc-7.6.3/lib/cabal-dev-0.9.2/bin"
 prepend_to_path "$HOME/bin/sbt/bin"
 prepend_to_path "/usr/local/smlnj/bin"
 prepend_to_path "/Applications/Android Studio.app/sdk/platform-tools"
 prepend_to_path "/Applications/Postgres.app/Contents/MacOS/bin"
-prepend_to_path "/apollo/env/envImprovement/bin"
 prepend_to_path "/usr/texbin"
 prepend_to_path "/sbin"
 prepend_to_path "/usr/sbin"
@@ -70,9 +63,6 @@ prepend_to_path "/usr/local/bin"
 prepend_to_path "/usr/local/sbin"
 prepend_to_path "$HOME/bin"
 prepend_to_path "$HOME/Developer/bin"
-prepend_to_path "/apollo/bin"
-prepend_to_path "/apollo/env/SDETools/bin"
-prepend_to_path "/apollo/env/Git/bin"
 prepend_to_path "/usr/local/Cellar/macvim/7.3-66/bin"
 prepend_to_path "/usr/local/share/python"
 prepend_to_path "/usr/local/share/npm/bin"
@@ -83,7 +73,6 @@ set -g -x fish_greeting ''
 set -gx LANG "en_US.utf-8"
 
 
-<<<<<<< HEAD
 function fish_prompt
   set -l last_status $status
 
@@ -160,6 +149,7 @@ function fish_prompt
 
   echo -n -s "$__fish_prompt_user" "$USER" "$__fish_prompt_normal" "$__fish_prompt_normal" ' ' "$__fish_prompt_cwd" (prompt_pwd) (__fish_git_prompt) "$__fish_prompt_normal" "$prompt_status" "$delim" ' '
 end
+
 function fish_prompt; simple_fish_prompt; end
 
 # rbenv support
