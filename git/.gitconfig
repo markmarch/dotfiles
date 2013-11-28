@@ -7,11 +7,11 @@
   editor = vi
 [user]
   name = Xiaoming Jia
-  email = xiaomij@amazon.com
+  email = xiaoming.m.jia@gmail.com
 [core]
   editor = vim
   pager = less -RX
-  excludesfile = /home/xiaomij/.gitignore
+  excludesfile = ~/.gitignore
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   co = checkout
@@ -23,9 +23,5 @@
   backup = push origin +refs/heads/*:refs/backup/xiaomij/*
 [branch]
   autosetuprebase = always
-[remote "coworker"]
-  uploadpack = /apollo/env/SDETools/bin/git-upload-pack
 [merge]
   ff = false
-[amazon]
-  append-cr-url = true
